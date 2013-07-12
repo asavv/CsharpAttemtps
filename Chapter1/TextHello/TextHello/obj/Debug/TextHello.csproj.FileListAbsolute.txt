@@ -1,1 +1,6 @@
 C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\Chapter1\TextHello\TextHello\bin\Debug\TextHello.exe.config
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\Chapter1\TextHello\TextHello\bin\Debug\TextHello.exe
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\Chapter1\TextHello\TextHello\bin\Debug\TextHello.pdb
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\Chapter1\TextHello\TextHello\obj\Debug\TextHello.csprojResolveAssemblyReference.cache
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\Chapter1\TextHello\TextHello\obj\Debug\TextHello.exe
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\Chapter1\TextHello\TextHello\obj\Debug\TextHello.pdb

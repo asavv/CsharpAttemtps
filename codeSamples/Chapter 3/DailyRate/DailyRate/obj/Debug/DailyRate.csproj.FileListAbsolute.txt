@@ -1,0 +1,7 @@
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 3\DailyRate\DailyRate\bin\Debug\DailyRate.exe
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 3\DailyRate\DailyRate\bin\Debug\DailyRate.pdb
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 3\DailyRate\DailyRate\obj\Debug\DailyRate.csprojResolveAssemblyReference.cache
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 3\DailyRate\DailyRate\obj\Debug\DailyRate.Properties.Resources.resources
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 3\DailyRate\DailyRate\obj\Debug\DailyRate.csproj.GenerateResource.Cache
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 3\DailyRate\DailyRate\obj\Debug\DailyRate.exe
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 3\DailyRate\DailyRate\obj\Debug\DailyRate.pdb

@@ -52,8 +52,24 @@ namespace Selection
 
         private int dateCompare(DateTime leftHandSide, DateTime rightHandSide)
         {
-            // TO DO
-            return 42;
+            int result;
+
+            if (leftHandSide.Year < rightHandSide.Year)
+                result = -1;
+            else if (leftHandSide.Year > rightHandSide.Year)
+                result = 1;
+            else if (leftHandSide.Month < leftHandSide.Month)
+                result = -1;
+            else if (leftHandSide.Month > rightHandSide.Month)
+                result = 1;
+            else if (leftHandSide.Day < rightHandSide.Day)
+                result = -1;
+            else if (leftHandSide.Day > rightHandSide.Day)
+                result = 1;
+            else
+                result = 0;
+
+            return result;
         }
     }
 }

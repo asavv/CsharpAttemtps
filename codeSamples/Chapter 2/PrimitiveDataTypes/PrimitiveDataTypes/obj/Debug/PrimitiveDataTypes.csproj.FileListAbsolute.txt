@@ -1,0 +1,12 @@
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\bin\Debug\PrimitiveDataTypes.exe
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\bin\Debug\PrimitiveDataTypes.pdb
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\obj\Debug\PrimitiveDataTypes.csprojResolveAssemblyReference.cache
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\obj\Debug\MainWindow.baml
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\obj\Debug\MainWindow.g.cs
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\obj\Debug\App.g.cs
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\obj\Debug\PrimitiveDataTypes_MarkupCompile.cache
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\obj\Debug\PrimitiveDataTypes.g.resources
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\obj\Debug\PrimitiveDataTypes.Properties.Resources.resources
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\obj\Debug\PrimitiveDataTypes.csproj.GenerateResource.Cache
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\obj\Debug\PrimitiveDataTypes.exe
+C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\codeSamples\Chapter 2\PrimitiveDataTypes\PrimitiveDataTypes\obj\Debug\PrimitiveDataTypes.pdb

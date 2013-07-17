@@ -28,10 +28,34 @@ namespace MathsOperators
 
         private void calculateClick(object sender, RoutedEventArgs e)
         {
-            int leftHandSide = int.Parse(lhsOperand.Text);
-            int rightHandSide = int.Parse(rhsOperand.Text);
-            int answer = doCalculation(leftHandSide, rightHandSide);
-            result.Text = answer.ToString();
+            try
+            {
+                int leftHandSide = int.Parse(lhsOperand.Text);
+                int rightHandSide = int.Parse(rhsOperand.Text);
+                int answer = doCalculation(leftHandSide, rightHandSide);
+                result.Text = answer.ToString();
+            }
+            catch (FormatException fEx)
+            {
+                result.Text = fEx.Message;
+                // expression.Text = (int.MaxValue).ToString();  /// testing int.MinValue porperty within int.
+            }
+            catch (OverflowException oEx)
+            {
+                result.Text = oEx.Message;
+            }
+            catch (InvalidOperationException ioEx)
+            {
+                result.Text = ioEx.Message;
+            }
+            catch (DivideByZeroException dbzEx)
+            {
+                result.Text = dbzEx.Message;
+            }
+            catch (Exception ex)
+            {
+                result.Text = ex.Message;
+            }
         }
 
         private int doCalculation(int leftHandSide, int rightHandSide)
@@ -48,6 +72,10 @@ namespace MathsOperators
                 result = divideValues(leftHandSide, rightHandSide);
             else if (remainder.IsChecked.HasValue && remainder.IsChecked.Value)
                 result = remainderValues(leftHandSide, rightHandSide);
+            else
+            {
+                throw new InvalidOperationException("No operator selected");
+            }/**/
 
             return result;
         }
@@ -67,7 +95,8 @@ namespace MathsOperators
         private int multiplyValues(int leftHandSide, int rightHandSide)
         {
             expression.Text = leftHandSide.ToString() + " * " + rightHandSide.ToString();
-            return leftHandSide * rightHandSide;
+            // return leftHandSide * rightHandSide;  // multiplication that is silently overflowing.
+            return checked(leftHandSide * rightHandSide);  // expression is not checked and will throw an overflowException instead of a wrong answer.
         }
 
         private int divideValues(int leftHandSide, int rightHandSide)

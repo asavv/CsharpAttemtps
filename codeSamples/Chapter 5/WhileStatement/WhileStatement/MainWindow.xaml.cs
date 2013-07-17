@@ -42,7 +42,18 @@ namespace WhileStatement
             FileInfo src = new FileInfo(fullPathname);
             fileName.Text = src.Name;
 
-            // add while loop here
+            source.Text = "";
+            TextReader reader = src.OpenText();
+            string line = reader.ReadLine();
+
+            while (line != null)
+            {
+                source.Text += line + '\n';
+                line = reader.ReadLine();
+
+            }
+            reader.Close();
+
         }
     }
 }

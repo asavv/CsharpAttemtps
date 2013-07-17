@@ -42,7 +42,7 @@ namespace MathsOperators
             }
             catch (OverflowException oEx)
             {
-                result.Text = oEx.Message;
+               result.Text = oEx.Message;
             }
             catch (InvalidOperationException ioEx)
             {
@@ -51,6 +51,8 @@ namespace MathsOperators
             catch (DivideByZeroException dbzEx)
             {
                 result.Text = dbzEx.Message;
+                //result.Text += "\n\n";
+                string checkingStack = dbzEx.StackTrace;   // to check what is inside StackTrace
             }
             catch (Exception ex)
             {

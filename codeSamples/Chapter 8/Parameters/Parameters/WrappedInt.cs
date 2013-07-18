@@ -3,7 +3,7 @@ namespace Parameters
 {
 	class WrappedInt
 	{
-		// to do
+	    public int Number;
 	}
 }
 

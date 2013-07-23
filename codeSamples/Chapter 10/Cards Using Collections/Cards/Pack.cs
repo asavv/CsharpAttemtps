@@ -7,19 +7,21 @@ namespace Cards
 	{
         public const int NumSuits = 4;
         public const int CardsPerSuit = 13;
-        private PlayingCard[,] cardPack;
+        private Hashtable cardPack;
         private Random randomCardSelector = new Random();
 
 		public Pack()
 		{
-            this.cardPack = new PlayingCard[NumSuits, CardsPerSuit];
+            this.cardPack = new Hashtable();
 
             for (Suit suit = Suit.Clubs; suit <= Suit.Spades; suit++)
             {
+                SortedList cardsInSuit = new SortedList();
                 for (Value value = Value.Two; value <= Value.Ace; value++)
                 {
-                    this.cardPack[(int)suit, (int)value] = new PlayingCard(suit, value);
+                    cardsInSuit.Add(value, new PlayingCard(suit,value));
                 }
+                this.cardPack.Add(suit,cardsInSuit);
             }
 		}
 
@@ -37,8 +39,9 @@ namespace Cards
                 value = (Value)randomCardSelector.Next(CardsPerSuit);
             }
 
-            PlayingCard card = this.cardPack[(int)suit, (int)value];
-            this.cardPack[(int)suit, (int)value] = null;
+            SortedList cardsInSuit = (SortedList) cardPack[suit];
+            PlayingCard card = (PlayingCard)cardsInSuit[value];
+            cardsInSuit.Remove(value);
             return card;
         }
 
@@ -60,7 +63,8 @@ namespace Cards
 
         private bool IsCardAlreadyDealt(Suit suit, Value value)
         {
-            return (this.cardPack[(int)suit, (int)value] == null); 
+            SortedList cardsInSuit = (SortedList) this.cardPack[suit];
+            return (!cardsInSuit.ContainsKey(value)); 
         }
 	}
 }

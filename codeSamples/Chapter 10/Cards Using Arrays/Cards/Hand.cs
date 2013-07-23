@@ -11,7 +11,14 @@ namespace Cards
 
 		public void AddCardToHand(PlayingCard cardDealt)
 		{
-            // to do - add the specified card to the hand
+            // Add the specified card to the hand
+            if (this.playingCardCount >= HandSize)
+            {
+                throw new  ArgumentException("Too many cards.");
+            }
+
+		    this.cards[this.playingCardCount] = cardDealt;
+		    this.playingCardCount++;
 		}
 
 		public override string ToString()

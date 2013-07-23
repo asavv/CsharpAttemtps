@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -47,6 +48,10 @@ namespace Cards
                 south.Text = hands[1].ToString();
                 east.Text = hands[2].ToString();
                 west.Text = hands[3].ToString();
+            }
+            catch (InvalidEnumArgumentException invEnumArgEx)
+            {
+                
             }
             catch (Exception ex)
             {

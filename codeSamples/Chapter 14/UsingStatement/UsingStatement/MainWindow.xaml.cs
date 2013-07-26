@@ -43,13 +43,14 @@ namespace UsingStatement
             fileName.Text = src.Name;
             source.Clear();
 
-            TextReader reader = new StreamReader(fullPathname);
-            string line;
-            while ((line = reader.ReadLine()) != null)
+            using (TextReader reader = new StreamReader(fullPathname,System.Text.Encoding.UTF8))
             {
-                source.Text += line + "\n";
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    source.Text += line + "\n";
+                }
             }
-            reader.Close();
         }
     }
 }

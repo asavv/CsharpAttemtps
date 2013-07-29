@@ -26,16 +26,20 @@ namespace WindowProperties
         {
             InitializeComponent();
             sizeChanged();
+            
         }
 
         private void sizeChanged()
         {
-            // to do
+            width.Text = this.ActualWidth.ToString();
+            height.Text = this.ActualHeight.ToString();
         }
+
 
         private void mainWindowSizeChanged(object sender, SizeChangedEventArgs e)
         {
             sizeChanged();
         }
+
     }
 }

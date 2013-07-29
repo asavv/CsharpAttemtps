@@ -8,8 +8,19 @@ namespace AutomaticProperties
     {
         static void DoWork()
         {
-            // to do
+            // all these objects are initialised with the default constructor, 
+            // but in triangle and pentagon change the value of the properties exposed 
+            // bu the Polygon class are changed after the constructor builds the object.
+            Polygon square = new Polygon();
+            Polygon triangle = new Polygon{NumSides = 3};
+            Polygon pentagon = new Polygon{SideLength = 15.5, NumSides = 5};
+
+            Console.WriteLine("Square: number of sides is {0}, length of each side is {1}", square.NumSides, square.SideLength);
+            Console.WriteLine("Triangle: number of sides is {0}, length of each side is {1}", triangle.NumSides, triangle.SideLength);
+            Console.WriteLine("Pentagon: number of sides is {0}, length of each side is {1}", pentagon.NumSides, pentagon.SideLength);
+
         }
+
 
         static void Main(string[] args)
         {

@@ -20,6 +20,7 @@ namespace IndexersTesting
             bool dig6bef = bits[5];
             bits[5] ^= true;
             bool dig6aft = bits[5];
+
             Console.WriteLine("New value of adapted variable {0}", bits);
         }
 

@@ -29,12 +29,24 @@ namespace Indexers
 
         private void findPhoneClick(object sender, RoutedEventArgs e)
         {
-            // to do
+            string text = name.Text;
+            if (!String.IsNullOrEmpty(text))
+            {
+                Name personsName = new Name(text);  // cast text from textBox to Name type
+                PhoneNumber personsPhoneNumber = this.phoneBook[personsName];
+                phoneNumber.Text = personsPhoneNumber.Text;
+            }
         }
 
         private void findNameClick(object sender, RoutedEventArgs e)
         {
-            // to do
+            string text = phoneNumber.Text;
+            if (!String.IsNullOrEmpty(text))
+            {
+                PhoneNumber personPhoneNumber = new PhoneNumber(text); // cast text from textBox to PhoneNumber type
+                Name personsName = this.phoneBook[personPhoneNumber];
+                name.Text = personsName.Text;
+            }
         }
 
         private void addClick(object sender, RoutedEventArgs e)

@@ -18,8 +18,8 @@ namespace Delegates
     public partial class ClockWindow : Window
     {
         private LocalClock localClock = null;
-        private EuropeanClock londonClock = null;
-        private AmericanClock newYorkClock = null;
+        private EuropeanClock berlinClock = null;
+        private AmericanClock sanFranciscoClock = null;
         private JapaneseClock tokyoClock = null;
 
         private Controller controller = new Controller();
@@ -27,42 +27,34 @@ namespace Delegates
         public ClockWindow()
         {
             InitializeComponent();
-            //    localClock = new LocalClock(localTimeDisplay);   // to include events
-            localClock = new LocalClock();    // to include events
-            londonClock = new EuropeanClock(londonTimeDisplay);
-            newYorkClock = new AmericanClock(newYorkTimeDisplay);
+            localClock = new LocalClock(localTimeDisplay);
+            berlinClock = new EuropeanClock(berlinTimeDisplay);
+            sanFranciscoClock = new AmericanClock(sanFranciscoTimeDisplay);
             tokyoClock = new JapaneseClock(tokyoTimeDisplay);
 
             controller.StartClocks += localClock.StartLocalClock;
-            controller.StartClocks += londonClock.StartEuropeanClock;
-            controller.StartClocks += newYorkClock.StartAmericanClock;
+            controller.StartClocks += berlinClock.StartEuropeanClock;
+            controller.StartClocks += sanFranciscoClock.StartAmericanClock;
             controller.StartClocks += tokyoClock.StartJapaneseClock;
 
             controller.StopClocks += localClock.StopLocalClock;
-            controller.StopClocks += londonClock.StopEuropeanClock;
-            controller.StopClocks += newYorkClock.StopAmericanClock;
+            controller.StopClocks += berlinClock.StopEuropeanClock;
+            controller.StopClocks += sanFranciscoClock.StopAmericanClock;
             controller.StopClocks += tokyoClock.StopJapaneseClock;
         }
 
         private void startClick(object sender, RoutedEventArgs e)
         {
-            controller.StartClocksRunning();
-            localClock.LocalClockTick += displayLocalTime;    // to include events ; it subscribes the displayLocalTime method to the LocalClockTick event of the localClock object
+            controller.StartClocks();
             start.IsEnabled = false;
             stop.IsEnabled = true;
         }
 
         private void stopClick(object sender, RoutedEventArgs e)
         {
-            controller.StopClocksRunning();
-            localClock.LocalClockTick -= displayLocalTime;    // to include events
+            controller.StopClocks();
             start.IsEnabled = true;
             stop.IsEnabled = false;
-        }
-
-        private void displayLocalTime(string time)     // to include events
-        {
-            localTimeDisplay.Text = time;     // to include events
         }
     }
 }

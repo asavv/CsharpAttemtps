@@ -1,0 +1,69 @@
+        private void calculateBMI()
+        {
+            try
+            {
+               // Veryfying that the weight and height fields are not empty.
+                if (bodyWeight.Text == "" && bodyHeight.Text == "")
+                {
+                    throw new ArgumentNullException("Please insert a value for the height and weight.");
+                }
+                else if (bodyHeight == "")
+                {
+                    throw new ArgumentNullException("Please also insert a height value.");
+                }
+                else if (bodyWeight == "")
+                {
+                    throw new ArgumentNullException("Please also insert a weight value.");
+                }
+
+                //Veryfying that the weight and height fields have a valid value.
+                double heightD, weightD;
+                bool testRes = false;
+                while (testRes == false)
+                {
+                    heightD = testInput(bodyHeight.Text, ref testRes);
+                    if (testRes == false)
+                    {
+                        bodyHeight.Text = "NOT VALID";
+                        continue;
+                    }
+                    weightD = testInput(bodyWeight.Text, ref testRes);
+                    if (testRes == false)
+                    {
+                        bodyWeight.Text = "NOT VALID";
+                        continue;
+                    }
+
+                }
+   
+
+                } //end of try
+            catch (Exception doh)
+            {
+                
+                throw;
+            }
+           
+            
+        }
+               
+        private double testInput(string input, ref bool variable)
+        {
+            try
+            {
+                double inputD = Convert.ToDouble(input);
+                variable = true;
+                return inputD;
+            }
+            catch (FormatException)
+            {
+                variable = false;
+                return -1.2;
+            }
+            catch (OverflowException)
+            {
+                variable = false;
+                return -1.2;
+            }
+        }
+    

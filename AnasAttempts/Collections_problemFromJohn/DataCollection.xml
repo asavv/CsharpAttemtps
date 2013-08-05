@@ -1,0 +1,26 @@
+﻿<?xml version="1.0"?>
+
+<collection>
+	<cds>
+		<cd> 1
+			<artist>  Symphony X </artist>
+			<genre> Symphonic Metal, Progressive Metal </genre>
+			<album> The Odyssey </album>
+			<year> 2002 </year>
+		</cd>
+		<cd> 2
+			<album> Paradise Lost </album>
+			<year> 2007 </year>
+			<artist>  Symphony X </artist>
+			<genre> Symphonic Metal, Progressive Metal </genre>
+		</cd>
+		<cd> 3
+			<artist> Poets of the Fall </artist>
+			<genre> Alternative Rock </genre>
+			<album> Revolution Roulette </album>
+			<year> 2008 </year>
+		</cd>
+	</cds>
+	<books>
+	</books>
+</collection>

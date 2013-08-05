@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<cds>
+  <cd>
+    <artist>  Symphony X </artist>
+    <album> The Odyssey </album>
+    <genre> Symphonic Metal, Progressive Metal </genre>
+    <year>2002</year>
+  </cd>
+  <cd>
+    <artist>  Symphony X </artist>
+    <album> Paradise Lost </album>
+    <genre> Symphonic Metal, Progressive Metal </genre>
+    <year>2007</year>
+  </cd>
+  <cd>
+    <artist> Poets of the Fall </artist>
+    <album> Revolution Roulette </album>
+    <genre> Alternative Rock </genre>
+    <year>2008</year>
+  </cd>
+  <cd>
+    <artist>Andrew Bird</artist>
+    <album>Break it yourself</album>
+    <genre>fold rock, indie folk</genre>
+    <year>2012</year>
+  </cd>
+</cds>

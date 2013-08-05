@@ -11,7 +11,7 @@ namespace Delegates
         private TextBox display = null;
         private TimeZoneInfo timeZoneForThisClock = null;
         private const string sanFranciscoTimeZoneId = "Pacific Standard Time";
-
+	    
         public AmericanClock(TextBox displayBox)
         {
             this.timeZoneForThisClock = TimeZoneInfo.FindSystemTimeZoneById(sanFranciscoTimeZoneId);

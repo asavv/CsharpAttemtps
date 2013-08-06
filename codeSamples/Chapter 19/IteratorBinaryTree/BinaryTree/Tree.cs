@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BinaryTree
 {
-    public class Tree<TItem> where TItem : IComparable<TItem>
+    public class Tree<TItem> :IEnumerable<TItem> where TItem : IComparable<TItem>
     {
         public Tree(TItem nodeValue)
         {
@@ -59,5 +59,30 @@ namespace BinaryTree
         public TItem NodeData { get; set; }
         public Tree<TItem> LeftTree { get; set; }
         public Tree<TItem> RightTree { get; set; }
+
+        IEnumerator<TItem> IEnumerable<TItem>.GetEnumerator()
+        {
+            if (this.LeftTree != null)
+            {
+                foreach (TItem item in LeftTree)
+                {
+                    yield return item;
+                }
+            }
+            yield return this.NodeData;
+
+            if (this.RightTree != null)
+            {
+                foreach (TItem item in this.RightTree)
+                {
+                    yield return item;
+                }
+            }
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

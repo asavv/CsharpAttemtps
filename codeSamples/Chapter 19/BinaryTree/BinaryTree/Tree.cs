@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BinaryTree
 {
-    public class Tree<TItem> where TItem : IComparable<TItem>
+    public class Tree<TItem> : IEnumerable<TItem> where TItem : IComparable<TItem>
     {
         public Tree(TItem nodeValue)
         {
@@ -56,8 +56,21 @@ namespace BinaryTree
             }
         }
 
+        // Constraints placed automatically as soon as IEnumerable<TItem>  is 
+        // added to the definition of Tree<TItem>.
+        //
         public TItem NodeData { get; set; }
         public Tree<TItem> LeftTree { get; set; }
         public Tree<TItem> RightTree { get; set; }
+
+        IEnumerator<TItem> IEnumerable<TItem>.GetEnumerator()
+        {
+            return new TreeEnumerator<TItem>(this);
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

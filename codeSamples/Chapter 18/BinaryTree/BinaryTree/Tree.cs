@@ -52,6 +52,25 @@ namespace BinaryTree
                 }
             }
         }
+
+        /// <summary>
+        /// Read the items in the tree, starting w the further left branch and reading in order from 
+        /// there, while always trying to be on the left branch.
+        /// </summary>
+        public void WalkTree()
+        {
+            if (this.LeftTree != null)
+            {
+                this.LeftTree.WalkTree();
+            }
+
+            Console.WriteLine(this.NodeData.ToString());
+
+            if (this.RightTree != null)
+            {
+                this.RightTree.WalkTree();
+            }
+        }
     
     }
 }

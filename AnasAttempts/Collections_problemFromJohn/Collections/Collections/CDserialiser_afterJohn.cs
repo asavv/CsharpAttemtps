@@ -81,11 +81,19 @@ namespace Collections
             if (xmlDoc == null) throw new ArgumentNullException("xmlDoc", "Xdocument is null ");
 
             List<CD> cds = new List<CD>();
+            /// HEEEEEEEEREEEEEEEEEEEEEEE!!!!
+            //var cdsAll = from cd in xmlDoc.Descendants("cds") where cd.Element().Value == "cd" select cd
             foreach (XElement cdElement in xmlDoc.Root.Elements("cds").Elements())
             {
                 CD cd = CDdeserialise(cdElement);
                 cds.Add(cd);
             }
+
+            //foreach (XElement cdElement in xmlDoc.Root.Elements("cds").Elements())
+            //{
+            //    CD cd = CDdeserialise(cdElement);
+            //    cds.Add(cd);
+            //}
 
             return cds;
         }

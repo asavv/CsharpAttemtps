@@ -9,7 +9,7 @@ namespace LINQexampleFromBook
     class Program
     {
         static void Main(string[] args)
-        {
+      {
              var customers = new[]
                 {
                     new {CustomerID = 1, FirstName = "Orlando", LastName = "Gee", CompanyName = "A Bike Store"},
@@ -110,6 +110,87 @@ namespace LINQexampleFromBook
 
             int numberOfCountries2 = addresses.Select(cou => cou.Country).Distinct().Count();
             Console.WriteLine("Correct number of countries present in addresses array: {0}", numberOfCountries2);
+
+            ///// Joining data
+            var citiesAndCustomers = customers
+                .Select(c => new {c.FirstName, c.LastName, c.CompanyName})
+                .Join(addresses, custs => custs.CompanyName, addrs => addrs.CompanyName,
+                      (custs, addrs) => new {custs.FirstName, custs.LastName, addrs.Country});
+            Console.WriteLine("\nName and country of each customer: ");
+            foreach (var row in citiesAndCustomers)
+            {
+                //Console.WriteLine(row);
+                Console.WriteLine(row.FirstName + " " + row.LastName + ", " + row.Country);
+            }
+            
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////   USING QUERY OPERATORS
+            Console.WriteLine("\n \n ============= USING QUERY OPERATORS ==============");
+            ///// Select data
+
+            var custFirstNames = (from cust in customers select cust.FirstName);
+            foreach (string name in custFirstNames)
+            {
+                Console.WriteLine(name);
+            }
+
+            var custFullName = (from cust in customers select new {cust.FirstName, cust.LastName});
+            foreach (var fullName in custFullName)
+            {
+                Console.WriteLine(fullName.FirstName + " " + fullName.LastName);
+            }
+
+            ////// Filtering data
+            var usCompan = (from a in addresses where String.Equals(a.Country, "USA") select a.CompanyName);
+            Console.WriteLine("\n \t Filtering data by company country:");
+            foreach (string usCompany in usCompan)
+            {
+                Console.WriteLine(usCompany);
+            }
+
+            ////// Ordering data
+            var compName = (from a in addresses orderby a.CompanyName select a.CompanyName);
+            Console.WriteLine("\n \t Ordering data by company name");
+            foreach (string name in companyNames)
+            {
+                Console.WriteLine(name);
+            }
+
+            ///// Grouping data
+            var compGroupedByCountry = (from a in addresses group a by a.Country);
+            Console.WriteLine("\n \t Group companies by country");
+            foreach (var companiesPerCountry in compGroupedByCountry)
+            {
+                Console.WriteLine("Country: {0} \t {1} companies", companiesPerCountry.Key, companiesPerCountry.Count());
+
+                foreach (var companies in companiesPerCountry)
+                {
+                    Console.WriteLine("\t {0}", companies.CompanyName);
+                }
+            }
+
+            //// Summary functions
+            int nbOfCompanies = (from a in addresses select  a.CompanyName).Count();
+            Console.WriteLine("\nNumber of companies: {0}", nbOfCompanies);
+
+            int nbOfCountries = (from a in addresses select  a.Country).Count();
+            Console.WriteLine("Wrong number of countries present in addresses array: {0}", nbOfCountries);
+
+            int nbOfCountries2 = (from a in addresses select a.Country).Distinct().Count();
+            Console.WriteLine("Correct number of countries present in addresses array: {0}", nbOfCountries2);
+
+            ///// Join data
+            var
+            citiesAndCustomerss = (from c in customers join a in addresses on c.CompanyName equals a.CompanyName
+                                       select new {c.FirstName, c.LastName, a.Country});
+
+            Console.WriteLine("\nName and country of each customer: ");
+            foreach (var row in citiesAndCustomerss)
+            {
+                //Console.WriteLine(row);
+                Console.WriteLine(row.FirstName + " " + row.LastName + ", " + row.Country);
+            }
+
         }
 
         class Names

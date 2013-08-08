@@ -63,10 +63,10 @@ namespace Collections
             if (cd == null) throw new ArgumentNullException("cd","CD object is null.");
 
             XElement element = new XElement("cd",
-                new XElement ("artist", cd.artist),
-                new XElement ("album", cd.album),
-                new XElement ("genre", cd.genre),
-                new XElement ("year", cd.year.ToString()) );
+                new XElement ("artist", cd.Artist),
+                new XElement ("album", cd.Album),
+                new XElement ("genre", cd.Genre),
+                new XElement ("year", cd.Year.ToString()) );
 
             return element;
         }

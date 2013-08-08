@@ -83,7 +83,8 @@ namespace Collections
             {
                 CD cd = new CD("Andrew Bird", "Break it yourself", "fold rock, indie folk", 2012);
                 cds.Add(cd);
-
+                cds.Add(cd);
+                
                 fileoutputPath = @"C:\Users\Ana\Projects\CsharpTryouts-ASAVV\CsharpAttemtps\AnasAttempts\Collections_problemFromJohn\OutputFile.xml";
                 FileHandling.WriteXmlFile(cds, fileoutputPath);
             }
@@ -92,6 +93,22 @@ namespace Collections
                 throw new Exception("Problems adding data and printing the total content of the list of CDs to file. Program closing...");
             }
 
+
+
+            //// Testing if two CD are the same or not
+            Console.WriteLine("Are there repeated CDs in the DB?");
+            Console.WriteLine("| If there are more True values than @ the       |");
+            Console.WriteLine("| diagonal then there are repeated CDs in the DB |");
+            foreach (CD cd1 in cds)
+            {
+                string cdComparisonOutput = "";
+                foreach (CD cd2 in cds)
+                {
+                    cdComparisonOutput += (cd1.Equals(cd2)).ToString() + "\t";
+                }
+
+                Console.WriteLine(cdComparisonOutput);
+            }
         }
     }
 }

@@ -38,25 +38,50 @@ namespace Collections
             mYear = pYear;
         }
 
+        public static bool operator ==(CD lhs, CD rhs)
+        {
+            return lhs.Equals(rhs);
+        }
 
-        public string artist
+        public static bool operator !=(CD lhs, CD rhs)
+        {
+            return !(lhs.Equals(rhs));
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is CD)
+            {
+                CD other = (CD) obj;
+                return (this.Artist == other.Artist && this.Album == other.Album &&
+                        this.Year == other.Year && this.Genre == other.Genre);
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public string Artist
         {
             get { return this.mArtist; }
             set { this.mArtist = value; }
         }
 
-        public string album
+        public string Album
         {
             get { return this.mAlbum; }
             set { this.mAlbum = value; }
         }
 
-        public string genre
+        public string Genre
         {
             get { return this.mGenre; }
             set { this.mGenre = value; }
         }
-        public int year
+        public int Year
         {
             get { return this.mYear; }
             set { this.mYear = value; }
@@ -107,7 +132,7 @@ namespace Collections
             Console.WriteLine("===========================================================");
             foreach (CD cd in cds)
             {
-                Console.WriteLine(" {0} \t {1} \t {2} \t {3} ", cd.artist, cd.album, cd.year, cd.genre);
+                Console.WriteLine(" {0} \t {1} \t {2} \t {3} ", cd.Artist, cd.Album, cd.Year, cd.Genre);
             }
         }
 

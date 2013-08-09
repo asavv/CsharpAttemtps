@@ -1,0 +1,49 @@
+﻿<Window x:Class="BellRingers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Middleshire Bell Ringers Association - Members" Height="470" Width="600" Closing="Window_Closing">
+    <Window.Resources>
+        <Style x:Key="bellRingersStyle" TargetType="Control">
+            <Setter Property="Background" Value="Gray" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Blue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="bellRingersFontStyle" TargetType="Control">
+            <Setter Property="FontFamily" Value="Comic Sans MS" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Image Panel.ZIndex="0" Name="backgroundImage" Margin="10,0,-10,0">
+            <Image.Source>
+                <BitmapImage UriSource="bell.gif"></BitmapImage>
+            </Image.Source>
+        </Image>
+        <Label Content="First Name" Height="28" Width="75" Margin="29,25,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource bellRingersFontStyle}"/>
+        <TextBox Name="firstName" Height="23" Width="175" Margin="121,25,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Text="TextBox" Style="{StaticResource bellRingersStyle}"/>
+        <Label Content="Last Name" Height="28" Width="75" Margin="305,25,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource bellRingersFontStyle}"/>
+        <TextBox Name="lastName" Height="23" Width="175" Margin="380,25,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top" TextWrapping="Wrap" Text="TextBox" Style="{StaticResource bellRingersStyle}"/>
+        <Label Content="Tower" Height="28" Width="75" Margin="29,72,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource bellRingersFontStyle}"/>
+        <ComboBox Name="towerNames" Height="23" Width="275" Margin="121,72,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource bellRingersFontStyle}"/>
+        <CheckBox Name="isCaptain" Height="23" Width="75" Margin="420,72,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Captain" Style="{StaticResource bellRingersFontStyle}"/>
+        <Label Content="Member since" Height="28" Width="90" Margin="26,126,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource bellRingersFontStyle}"/>
+        <DatePicker Name="memberSince" Height="23" Width="275" Margin="121,134,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <GroupBox Name="yearsExperience" Height="200" Width="258" Margin="29,174,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Header="Experience" Style="{StaticResource bellRingersFontStyle}">
+            <StackPanel Margin="0,0,0,0" Name="StackPanel1">
+                <RadioButton Content="Up to 1 year" Name="novice" Height="16" Width="120" Margin="0,10,0,0"/>
+                <RadioButton Content="1 to 4 years" Name="intermendiate" Height="16" Width="120" Margin="0,10,0,0"/>
+                <RadioButton Content="5 to 9 years" Name="experienced" Height="16" Width="120" Margin="0,10,0,0"/>
+                <RadioButton Content="10 or more years" Name="accomplished" Height="16" Width="120" Margin="0,10,0,0"/>
+            </StackPanel>
+        </GroupBox>
+        <ListBox Name="methods" Height="200" Width="245" Margin="310,174,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource bellRingersFontStyle}"/>
+        <Button Name="add" Height="23" Width="75" Margin="188,388,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Add" Style="{StaticResource bellRingersStyle}" Click="add_Click"/>
+        <Button Name="clear" Height="23" Width="75" Margin="313,388,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Clear" Style="{StaticResource bellRingersStyle}" Click="clear_Click"/>
+
+    </Grid>
+</Window>
